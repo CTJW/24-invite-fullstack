@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux`";
-import { chooseNotGoing, asyncNotGoing } from "./inviteSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { chooseNotGoing, asyncNotGoing, selectNotGoing } from "./inviteSlice";
 import { Link } from "react-router-dom";
 
 export default function NotGoingPage() {
-  const notGoing = useSelector(chooseNotGoing);
+  const notGoing = useSelector(selectNotGoing);
   const dispatch = useDispatch();
 
   useEffect(() => {

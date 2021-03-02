@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import { dispatch } from "./imviteSlice";
+// import { dispatch } from "./inviteSlice";
 import { useSeletor, useDispatch } from "react-redux";
 import { sendToGoing, sendToNotGoing } from "./inviteSlice";
 

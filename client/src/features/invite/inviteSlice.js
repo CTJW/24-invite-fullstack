@@ -6,19 +6,19 @@ export const inviteSlice = createSlice({
     value: 0,
   },
   reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
-    },
+    // increment: (state) => {
+    //   // Redux Toolkit allows us to write "mutating" logic in reducers. It
+    //   // doesn't actually mutate the state because it uses the Immer library,
+    //   // which detects changes to a "draft state" and produces a brand new
+    //   // immutable state based off those changes
+    //   state.value += 1;
+    // },
+    // decrement: (state) => {
+    //   state.value -= 1;
+    // },
+    // incrementByAmount: (state, action) => {
+    //   state.value += action.payload;
+    // },
 
     sendToGoing: (state, action) => {
       state.value += action.payload;
@@ -28,13 +28,21 @@ export const inviteSlice = createSlice({
       state.value += action.payload;
     },
 
-    asyncNotGoing: (state, action) => {
-      state.value += action.payload;
-    },
+    //   asyncNotGoing: (state, action) => {
+    //     state.value += action.payload;
+    //   },
 
-    chooseNotGoing: (state, action) => {
-      state.value += action.payload;
-    },
+    //   chooseNotGoing: (state, action) => {
+    //     state.value += action.payload;
+    //   },
+
+    //   asyncGoing: (state, action) => {
+    //     state.value += action.payload;
+    //   },
+
+    //   chooseGoing: (state, action) => {
+    //     state.value += action.payload;
+    //   },
   },
 });
 
@@ -46,6 +54,8 @@ export const {
   sendToNotGoing,
   chooseNotGoing,
   asyncNotGoing,
+  chooseGoing,
+  asyncGoing,
 } = inviteSlice.actions;
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -62,5 +72,6 @@ export const incrementAsync = (amount) => (dispatch) => {
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state) => state.invite.value)`
 export const selectCount = (state) => state.invite.value;
-
+export const selectGoing = (state) => state.goings.going;
+export const selectNotGoing = (state) => state.notgoings.notgoing;
 export default inviteSlice.reducer;

@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.get("/results", (req, res) => {
   axios.get("http://randomuser.me/api").then((resp) => {
-    // console.log(resp.data.results);
+    console.log(resp.data.results);
     res.json(resp.data.results);
   });
 });
