@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 // import { dispatch } from "./imviteSlice";
 import { useSeletor, useDispatch } from "react-redux";
+import { sendToGoing, sendToNotGoing } from "./inviteSlice";
 
 export default function InvitePage() {
   const [invites, setInvites] = useState([]);
@@ -45,9 +46,20 @@ export default function InvitePage() {
         })}
       </div>
 
-      <button></button>
-      <button></button>
-      {/* <button onClick={() => Invitee()}></button> */}
+      <div className="buttons">
+        <button
+          className="button1"
+          onClick={() => dispatch(sendToNotGoing(invites))}
+        >
+          X
+        </button>
+        <button
+          className="button2"
+          onClick={() => dispatch(sendToGoing(invites))}
+        >
+          √
+        </button>
+      </div>
     </div>
   );
 }
